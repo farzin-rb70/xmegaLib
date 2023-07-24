@@ -1,0 +1,8 @@
+asmembler:
+-Wa,-gdwarf2 -x assembler-with-cpp -c -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" -I "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include"  -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -Wa,-g 
+linker:
+-Wl,-Map="$(OutputFileName).map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" 
+C:
+-x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000 -D_ATXMEGA128A_4U_  -I"D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include" -I"../Arduino" -I"../Hardware" -I"../keypad" -I"../IOClass" -I"../lcd/Clib" -I"../lcd"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" 
+Cpp:
+-funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000 -D_ATXMEGA128A_4U_  -I"D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include" -I"../Arduino" -I"../Hardware" -I"../keypad" -I"../IOClass" -I"../lcd/Clib" -I"../lcd"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" -c -std=c++17 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" 
