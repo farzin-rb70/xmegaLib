@@ -24,14 +24,13 @@ main.d main.o: .././main.cpp \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  ../keypad/MatrixKeypad.h ../keypad/Key.h ../keypad/KeyObserver.h \
  ../keypad/InputDevice.h ../keypad/SingleInputKeypad.h \
- ../Arduino/Stream.h ../Arduino/WString.h \
+ ../Arduino/Stream.h ../Arduino/Print.h ../Arduino/WString.h \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../IOClass/ioInterface.h ../IOClass/ioClass.h ../IOClass/ioInterface.h \
- ../Hardware/xmegaUART.h ../Arduino/Print.h ../Arduino/Printable.h \
- ../Arduino/Stream.h
+ ../Arduino/Printable.h ../IOClass/ioInterface.h ../IOClass/ioClass.h \
+ ../IOClass/ioInterface.h ../Hardware/xmegaUART.h
 
 d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -95,6 +94,8 @@ d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 ../Arduino/Stream.h:
 
+../Arduino/Print.h:
+
 ../Arduino/WString.h:
 
 d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
@@ -105,6 +106,8 @@ d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
+../Arduino/Printable.h:
+
 ../IOClass/ioInterface.h:
 
 ../IOClass/ioClass.h:
@@ -112,9 +115,3 @@ d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../IOClass/ioInterface.h:
 
 ../Hardware/xmegaUART.h:
-
-../Arduino/Print.h:
-
-../Arduino/Printable.h:
-
-../Arduino/Stream.h:

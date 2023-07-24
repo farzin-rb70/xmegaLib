@@ -2,7 +2,7 @@
 #define XMEGAUART_H_
 
 #include "avr/interrupt.h"
-#include "Print.h"
+#include "Stream.h"
 
 //#define SERIAL1En
 //#define SERIAL2En 
@@ -110,7 +110,7 @@ typedef uint8_t rx_buffer_index_t;
 #define SERIAL_7O2 0x3C
 #define SERIAL_8O2 0x3E
 
-class HardwareSerial : public Print
+class HardwareSerial : public Stream
 {
 protected:
 	bool _written;

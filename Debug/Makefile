@@ -42,6 +42,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../Arduino/Print.cpp \
+../Arduino/Stream.cpp \
 ../Arduino/WString.cpp \
 ../Hardware/xmegaBasicTimer.c \
 ../Hardware/xmegaIO.c \
@@ -60,6 +61,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 Arduino/Print.o \
+Arduino/Stream.o \
 Arduino/WString.o \
 Hardware/xmegaBasicTimer.o \
 Hardware/xmegaIO.o \
@@ -71,6 +73,7 @@ main.o
 
 OBJS_AS_ARGS +=  \
 Arduino/Print.o \
+Arduino/Stream.o \
 Arduino/WString.o \
 Hardware/xmegaBasicTimer.o \
 Hardware/xmegaIO.o \
@@ -82,6 +85,7 @@ main.o
 
 C_DEPS +=  \
 Arduino/Print.d \
+Arduino/Stream.d \
 Arduino/WString.d \
 Hardware/xmegaBasicTimer.d \
 Hardware/xmegaIO.d \
@@ -93,6 +97,7 @@ main.d
 
 C_DEPS_AS_ARGS +=  \
 Arduino/Print.d \
+Arduino/Stream.d \
 Arduino/WString.d \
 Hardware/xmegaBasicTimer.d \
 Hardware/xmegaIO.d \
@@ -117,6 +122,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 Arduino/Print.o: ../Arduino/Print.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)D:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000 -D_ATXMEGA128A_4U_  -I"D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include" -I"../Arduino" -I"../Hardware" -I"../keypad" -I"../IOClass"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" -c -std=c++17 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Arduino/Stream.o: ../Arduino/Stream.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)D:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000 -D_ATXMEGA128A_4U_  -I"D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include" -I"../Arduino" -I"../Hardware" -I"../keypad" -I"../IOClass"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega128a4u -B "D:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a4u" -c -std=c++17 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

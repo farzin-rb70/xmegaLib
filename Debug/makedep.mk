@@ -4,6 +4,8 @@
 
 Arduino\Print.cpp
 
+Arduino\Stream.cpp
+
 Arduino\WString.cpp
 
 Hardware\xmegaBasicTimer.c
