@@ -30,7 +30,11 @@ main.d main.o: .././main.cpp \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h \
  d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  ../Arduino/Printable.h ../IOClass/ioInterface.h ../IOClass/ioClass.h \
- ../IOClass/ioInterface.h ../Hardware/xmegaUART.h
+ ../IOClass/ioInterface.h ../Hardware/xmegaUART.h ../lcd/u8g2Lib.h \
+ ../Arduino/Print.h ../lcd/Clib/u8g2.h ../lcd/Clib/u8x8.h \
+ d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include-fixed\limits.h \
+ ../lcd/ST7565Lcd.h ../lcd/u8g2Lib.h ../lcd/font_farsi.h ../lcd/U8g2lib.h \
+ ../lcd/PersianReshaper.h ../Arduino/WString.h
 
 d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -115,3 +119,25 @@ d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../IOClass/ioInterface.h:
 
 ../Hardware/xmegaUART.h:
+
+../lcd/u8g2Lib.h:
+
+../Arduino/Print.h:
+
+../lcd/Clib/u8g2.h:
+
+../lcd/Clib/u8x8.h:
+
+d:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include-fixed\limits.h:
+
+../lcd/ST7565Lcd.h:
+
+../lcd/u8g2Lib.h:
+
+../lcd/font_farsi.h:
+
+../lcd/U8g2lib.h:
+
+../lcd/PersianReshaper.h:
+
+../Arduino/WString.h:

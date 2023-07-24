@@ -1,5 +1,5 @@
-#ifndef INPUT_DEVICE_H_
-#define INPUT_DEVICE_H_
+#ifndef KEY_OBSEVER_H_
+#define KEY_OBSEVER_H_
 
 #include <stdio.h>
 
@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif /* INPUT_DEVICE_H_ */
+#endif /* KEY_OBSEVER_H_ */
