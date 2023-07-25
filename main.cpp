@@ -13,12 +13,14 @@
 #include "u8g2Lib.h"
 #include "ST7565Lcd.h"
 #include "PersianReshaper.h"
+#include "eeprom.h"
 
 
 
 InputDevice *pKeypad;
 Stream *pDebugPort;
 IOInterface *pBuzzer;
+Eeprom *externalEEprom;
 
 IOClass buzzer(PE1,OUTPUT,LOW);
 
@@ -71,6 +73,8 @@ int main(void)
 	clockConfig();
 	millisTimerConfig();
 	pKeypad->registerOb(&posLogic);
+	
+	
 	pLcd->begin(122,32);
 	pLcd->setFlipMode(1);
 	pLcd->setContrast(20);
