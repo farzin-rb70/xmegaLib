@@ -9,6 +9,8 @@
 #ifndef AT24CXXX_H_
 #define AT24CXXX_H_
 
+#define EEPROM_DELAY 3
+
 #include <stdint.h>
 #include "eeprom.h"
 #include "avr/io.h"

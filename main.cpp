@@ -14,6 +14,7 @@
 #include "ST7565Lcd.h"
 #include "PersianReshaper.h"
 #include "eeprom.h"
+#include "AT24CXXX.h"
 
 
 
@@ -23,6 +24,7 @@ IOInterface *pBuzzer;
 Eeprom *externalEEprom;
 
 IOClass buzzer(PE1,OUTPUT,LOW);
+AT24CXXX atEEprom(0);
 
 
 class logic : public KeyObserver
@@ -68,11 +70,15 @@ int main(void)
 	pDebugPort=&Serial5;
 	pBuzzer =&buzzer;
 	pLcd = &pos4lcd;
+	externalEEprom = &atEEprom;
+
 	
 	
 	clockConfig();
 	millisTimerConfig();
 	pKeypad->registerOb(&posLogic);
+	
+	atEEprom.init();
 	
 	
 	pLcd->begin(122,32);
@@ -81,6 +87,9 @@ int main(void)
 	pLcd->setFontMode(1);
 	pLcd->enableUTF8Print();
 	pLcd->setFontDirection(0);
+	externalEEprom->writeByte(100,1);
+	delay(100);
+	uint8_t x = externalEEprom->readByte(100);
 	
 	pLcd->setFontRefHeightExtendedText();
 	pLcd->setFont(IRANSansXMedium1);
@@ -92,13 +101,17 @@ int main(void)
 	verticalFreeSpace = verticalFreeSpace >= 0 ? verticalFreeSpace : 0;
 	u8g2_uint_t yCursor =16 + textDescent -	(verticalFreeSpace / 2);
 	pLcd->setCursor(0,yCursor);
-	pLcd->print("English test");
+	String mytext = "Number = " + String(x);
+	pLcd->print(mytext);
 	
 	yCursor = 32 + textDescent - (verticalFreeSpace / 2);
 	pLcd->setCursor(10,yCursor);
 	char* testText = "تست فارسی نویسی";
 	pLcd->print(prReshaper(testText));
 	pLcd->updateDisplay();
+	
+	externalEEprom->writeByte(100,x+1);
+	
 	
 	
 	while (1)
