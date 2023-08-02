@@ -42,6 +42,7 @@ size_t Print::write(const uint8_t *buffer, size_t size)
   return n;
 }
 
+#ifdef __AVR_PGM
 size_t Print::print(const __FlashStringHelper *ifsh)
 {
   PGM_P p = reinterpret_cast<PGM_P>(ifsh);
@@ -58,6 +59,7 @@ size_t Print::print(const __FlashStringHelper *ifsh)
   }
   return n;
 }
+#endif
 
 size_t Print::print(const String &s)
 {

@@ -6,6 +6,7 @@
 #ifndef __PERSIANRESHAPER_H__
 #define __PERSIANRESHAPER_H__
 #include <string.h>
+#include <stdint.h>
 #include "WString.h"
 //----------------------------------------------------------------------------
 //#define DEBUG

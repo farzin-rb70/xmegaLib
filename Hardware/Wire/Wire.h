@@ -25,8 +25,6 @@
 #include <inttypes.h>
 #include "Stream.h"
 
-#define __AVR_XMEGA__
-
 #if !defined(__AVR_XMEGA__)
 
 #define BUFFER_LENGTH 32

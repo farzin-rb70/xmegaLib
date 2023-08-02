@@ -26,7 +26,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
+#ifndef __AVR_PGM
+//#define __AVR_PGM
+#endif
+
+
+#ifdef __AVR_PGM
 #include <avr/pgmspace.h>
+#endif
+
 
 // When compiling programs with this class, the following gcc parameters
 // dramatically increase performance and memory (RAM) efficiency, typically
@@ -34,8 +43,10 @@
 //     -felide-constructors
 //     -std=c++0x
 
+#ifndef __AVR_PGM
 class __FlashStringHelper;
 #define F(string_literal) (reinterpret_cast<const __FlashStringHelper *>(PSTR(string_literal)))
+#endif
 
 // An inherited class for holding the result of a concatenation.  These
 // result objects are assumed to be writable by subsequent concatenations.
@@ -58,7 +69,9 @@ public:
   // be false).
   String(const char *cstr = "");
   String(const String &str);
+  #ifndef __AVR_PGM
   String(const __FlashStringHelper *str);
+  #endif
        #if __cplusplus >= 201103L || defined(__GXX_EXPERIMENTAL_CXX0X__)
   String(String &&rval);
   String(StringSumHelper &&rval);
@@ -85,7 +98,9 @@ public:
   // marked as invalid ("if (s)" will be false).
   String & operator = (const String &rhs);
   String & operator = (const char *cstr);
+  #ifndef __AVR_PGM
   String & operator = (const __FlashStringHelper *str);
+  #endif
        #if __cplusplus >= 201103L || defined(__GXX_EXPERIMENTAL_CXX0X__)
   String & operator = (String &&rval);
   String & operator = (StringSumHelper &&rval);
@@ -106,7 +121,9 @@ public:
   unsigned char concat(unsigned long num);
   unsigned char concat(float num);
   unsigned char concat(double num);
+  #ifndef __AVR_PGM
   unsigned char concat(const __FlashStringHelper * str);
+  #endif
 
   // if there's not enough memory for the concatenated value, the string
   // will be left unchanged (but this isn't signalled in any way)
@@ -120,7 +137,9 @@ public:
   String & operator += (unsigned long num)  {concat(num); return (*this);}
   String & operator += (float num)    {concat(num); return (*this);}
   String & operator += (double num)   {concat(num); return (*this);}
+  #ifndef __AVR_PGM
   String & operator += (const __FlashStringHelper *str){concat(str); return (*this);}
+  #endif
 
   friend StringSumHelper & operator + (const StringSumHelper &lhs, const String &rhs);
   friend StringSumHelper & operator + (const StringSumHelper &lhs, const char *cstr);

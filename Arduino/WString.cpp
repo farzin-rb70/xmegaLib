@@ -178,6 +178,7 @@ String & String::copy(const char *cstr, unsigned int length)
   return *this;
 }
 
+#ifdef __AVR_PGM
 String & String::copy(const __FlashStringHelper *pstr, unsigned int length)
 {
   if (!reserve(length)) {
@@ -188,6 +189,7 @@ String & String::copy(const __FlashStringHelper *pstr, unsigned int length)
   strcpy_P(buffer, (PGM_P)pstr);
   return *this;
 }
+#endif
 
 #if __cplusplus >= 201103L || defined(__GXX_EXPERIMENTAL_CXX0X__)
 void String::move(String &rhs)
@@ -243,6 +245,7 @@ String & String::operator = (const char *cstr)
   return *this;
 }
 
+#ifdef __AVR_PGM
 String & String::operator = (const __FlashStringHelper *pstr)
 {
   if (pstr) copy(pstr, strlen_P((PGM_P)pstr));
@@ -250,6 +253,7 @@ String & String::operator = (const __FlashStringHelper *pstr)
 
   return *this;
 }
+#endif 
 
 /*********************************************/
 /*  concat                                   */
@@ -334,6 +338,7 @@ unsigned char String::concat(double num)
   return concat(string, strlen(string));
 }
 
+#ifdef __AVR_PGM
 unsigned char String::concat(const __FlashStringHelper * str)
 {
   if (!str) return 0;
@@ -345,6 +350,7 @@ unsigned char String::concat(const __FlashStringHelper * str)
   len = newlen;
   return 1;
 }
+#endif
 
 /*********************************************/
 /*  Concatenate                              */

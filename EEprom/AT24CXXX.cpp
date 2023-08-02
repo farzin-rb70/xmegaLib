@@ -13,7 +13,7 @@ void AT24CXXX::init(){
 	digitalWrite(PB1,LOW);
 }
 
-void AT24CXXX::write(uint16_t address, uint8_t* data, uint8_t length){
+void AT24CXXX::write(uint16_t address, uint8_t* data, uint16_t length){
 	xmWireC.beginTransmission(_address);
 	xmWireC.write((int)(address >> 8));
 	xmWireC.write((int)(address & 0xFF));

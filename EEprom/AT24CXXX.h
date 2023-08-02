@@ -21,7 +21,7 @@ public:
 	AT24CXXX(uint8_t address);
 	void init();
 protected:
-	void write(uint16_t address, uint8_t* data, uint8_t length) override; //write multiple bytes to EEPROM
+	void write(uint16_t address, uint8_t* data, uint16_t length) override; //write multiple bytes to EEPROM
 	void read(uint16_t address, uint8_t length, uint8_t *buffer) override; //read multiple bytes to EEPROM
 private:
 	uint8_t _address;
